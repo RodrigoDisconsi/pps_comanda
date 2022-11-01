@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm" (submit)="onLogin()">
+  <div class="ion-text-center">
+    <ion-icon class="icon" name="person-circle-sharp"></ion-icon>
+  </div>
+  <ion-item lines="full" [class.invalid]="isNotValidField('email')">
+    <ion-label><strong>Email: </strong></ion-label>
+    <ion-input formControlName="email" type="email"></ion-input>
+    <ion-note *ngIf="isNotValidField('email')" slot="error">{{getErrorMessage('email')}}</ion-note>
+  </ion-item>
+
+  <ion-item lines="full" style="margin-bottom: 2rem;" [class.invalid]="isNotValidField('pass')">
+    <ion-label><strong>Password: </strong></ion-label>
+    <ion-input formControlName="pass" type="password"></ion-input>
+    <ion-note *ngIf="isNotValidField('pass')" slot="error">{{getErrorMessage('pass')}}</ion-note>
+  </ion-item>
+
+  <ion-button type="submit" class="ion-activatable ripple-parent" 
+  shape="round" expand="block" [disabled]="loginForm.invalid">
+    <ion-icon slot="start" name="person"></ion-icon>
+    Iniciar sesión
+  </ion-button>
+
+  <ion-button color="light" slot="end" class="text-small" routerLink="/registro" 
+  shape="round" expand="block">
+    Registrarse
+  </ion-button>
+</form>

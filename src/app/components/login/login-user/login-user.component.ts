@@ -1,22 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonSlides } from '@ionic/angular';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-login-user',
+  templateUrl: './login-user.component.html',
+  styleUrls: ['./login-user.component.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginUserComponent implements OnInit {
+
   loginForm:FormGroup;
-  @ViewChild('mySlider')  slides: IonSlides;
-
-
-  slideOpts = {
-    initialSlide: 0,
-    speed: 400
-  };
-
+  
   constructor(private form:FormBuilder) { }
 
   ngOnInit() {

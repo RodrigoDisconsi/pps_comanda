@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border fondo" translucent mode="ios" >
+
+  <ion-toolbar color="dark">
+    <ion-title class="text-big" text-capitalize>¡Bienvenido!</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="fondo" style="top: 15%;">
+
+  <ion-card class="contenido">
+    <ion-segment value="usuario" (ionChange)="onChange($event)">
+      <ion-segment-button value="usuario">
+        <ion-label>Usuario</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="anonimo">
+        <ion-label>Anonimo</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-card-content mode="md" class="home">
+      <div *ngIf="valueSegment == 'usuario'">
+        <app-login-user></app-login-user>
+      </div>
+      <div *ngIf="valueSegment == 'anonimo'">
+        <app-login-anonimo></app-login-anonimo>
+      </div>
+
+
+    </ion-card-content>
+  </ion-card>
+
+  
+
+</ion-content>
+
+      <!-- <button class="eye" slot="end" ion-button icon-only type="button">
+        <ion-icon name="eye-outline"> </ion-icon>
+        <ion-icon name="eye-off-outline"> </ion-icon>
+      </button>
+      <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button class="users" color="light">
+          <ion-icon name="person-circle-sharp" style="font-size: 100px; color: cornflowerblue;"></ion-icon>
+        </ion-fab-button>
+        
+        <ion-fab-list side="buttom" >
+          <div>
+            <ion-fab-button class="users">
+              <label>Aasd</label>
+            </ion-fab-button>
+          </div>
+        </ion-fab-list>
+      </ion-fab> -->
