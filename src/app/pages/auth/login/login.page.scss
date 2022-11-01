@@ -1,0 +1,37 @@
+.icon{
+    width: 150px;
+    height: 150px;
+}
+
+ion-item{
+    --background: #ffffff;
+    --color: black;
+  
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --border-radius: 50px;
+    margin-bottom: 1rem;
+
+    --highlight-height: 0;
+    --highlight-color-focused: rgb(70, 144, 223);
+    --highlight-color-valid: rgb(98, 231, 46);
+    --highlight-color-invalid: rgb(70, 144, 223);
+}
+
+ion-button{
+    margin-bottom: 1rem;
+}
+
+ion-item.ion-dirty.invalid{
+    --highlight-color-invalid: rgb(231, 71, 46);
+}
+
+.slider {
+    height: 600px;
+    width: 400px;
+    }
+    .slider-slide {
+     height: 100%;
+     width: 100%;
+    } 
