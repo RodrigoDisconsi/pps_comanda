@@ -5,7 +5,7 @@
     </p>
   </div>
   
-  <ion-item lines="full" [class.invalid]="isNotValidField('alias')">
+  <ion-item class="input-light-validation" lines="full" [class.invalid-input]="isNotValidField('alias')">
     <ion-label><strong>Alias: </strong></ion-label>
     <ion-input formControlName="alias" type="text"></ion-input>
     <ion-note *ngIf="isNotValidField('alias')" slot="error">{{getErrorMessage('alias')}}</ion-note>
@@ -15,14 +15,11 @@
   expand="block">
     Subir Foto
   </ion-button>
-  
-  <ion-footer>
-    <ion-toolbar>
-      <ion-button type="submit" class="ion-activatable ripple-parent" 
-      expand="block" style="margin-top: 1rem;" [disabled]="loginForm.invalid">
-        <ion-icon slot="start" name="person"></ion-icon>
-        Ingresar
-      </ion-button> 
-    </ion-toolbar>
-  </ion-footer>
+
+  <ion-button type="submit" class="ion-activatable ripple-parent" 
+  expand="block" style="margin-top: 1rem;" [disabled]="loginForm.invalid">
+    <ion-icon slot="start" name="person"></ion-icon>
+    Ingresar
+  </ion-button> 
+
 </form>

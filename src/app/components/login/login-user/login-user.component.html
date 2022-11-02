@@ -2,13 +2,13 @@
   <div class="ion-text-center">
     <ion-icon class="icon" name="person-circle-sharp"></ion-icon>
   </div>
-  <ion-item lines="full" [class.invalid]="isNotValidField('email')">
+  <ion-item class="input-light-validation" lines="full" [class.invalid-input]="isNotValidField('email')">
     <ion-label><strong>Email: </strong></ion-label>
     <ion-input formControlName="email" type="email"></ion-input>
     <ion-note *ngIf="isNotValidField('email')" slot="error">{{getErrorMessage('email')}}</ion-note>
   </ion-item>
 
-  <ion-item lines="full" style="margin-bottom: 2rem;" [class.invalid]="isNotValidField('pass')">
+  <ion-item class="input-light-validation" lines="full" style="margin-bottom: 2rem;" [class.invalid-input]="isNotValidField('pass')">
     <ion-label><strong>Password: </strong></ion-label>
     <ion-input formControlName="pass" type="password"></ion-input>
     <ion-note *ngIf="isNotValidField('pass')" slot="error">{{getErrorMessage('pass')}}</ion-note>

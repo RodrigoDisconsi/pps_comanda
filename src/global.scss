@@ -12,3 +12,24 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.input-light-validation{
+    --background: #ffffff;
+    --color: black;
+  
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --border-radius: 50px;
+    margin-bottom: 1rem;
+
+    --highlight-height: 0;
+    --highlight-color-focused: rgb(70, 144, 223);
+    --highlight-color-valid: rgb(98, 231, 46);
+    --highlight-color-invalid: rgb(70, 144, 223);
+}
+
+.invalid-input{
+    --highlight-color-invalid: rgb(231, 71, 46);
+}
