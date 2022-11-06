@@ -1,9 +1,58 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Alta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="fondo" style="height: 95%;">
+    <form [formGroup]="loginForm" (submit)="onLogin()">
+      <div>
+        <p [align]="'center'">
+          <ion-img [src]="loginForm.get('img').value"></ion-img>
+        </p>
+      </div>
+      
+      <ion-item class="input-light-validation" lines="full" [class.invalid-input]="isNotValidField('nombre')">
+        <ion-label><strong>Nombre: </strong></ion-label>
+        <ion-input formControlName="nombre" type="text"></ion-input>
+        <ion-note *ngIf="isNotValidField('nombre')" slot="error">{{getErrorMessage('nombre')}}</ion-note>
+      </ion-item>
+      <ion-item class="input-light-validation" lines="full" [class.invalid-input]="isNotValidField('apellido')">
+        <ion-label><strong>Apellido: </strong></ion-label>
+        <ion-input formControlName="apellido" type="text"></ion-input>
+        <ion-note *ngIf="isNotValidField('apellido')" slot="error">{{getErrorMessage('apellido')}}</ion-note>
+      </ion-item>
+      <ion-item class="input-light-validation" lines="full" [class.invalid-input]="isNotValidField('dni')">
+        <ion-label><strong>DNI: </strong></ion-label>
+        <ion-input formControlName="dni" type="text"></ion-input>
+        <ion-note *ngIf="isNotValidField('dni')" slot="error">{{getErrorMessage('dni')}}</ion-note>
+      </ion-item>
+      <ion-item class="input-light-validation" lines="full" [class.invalid-input]="isNotValidField('cuil')">
+        <ion-label><strong>CUIL: </strong></ion-label>
+        <ion-input formControlName="cuil" type="text"></ion-input>
+        <ion-note *ngIf="isNotValidField('cuil')" slot="error">{{getErrorMessage('cuil')}}</ion-note>
+      </ion-item>
+      <ion-item class="input-light-validation">
+        <ion-select mode="ios" placeholder="Tipo de empleado">
+          <ion-select-option value="metre"> Metre</ion-select-option>
+          <ion-select-option value="mozo">Mozo</ion-select-option>
+          <ion-select-option value="bartender">Bartender</ion-select-option>
+          <ion-select-option value="cocinero">Cocinero</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-button color="light" slot="end" class="text-small"
+      expand="block">
+        Subir Foto
+      </ion-button>
+    
+      <ion-button type="submit" class="ion-activatable ripple-parent" 
+      expand="block" style="margin-top: 1rem;" [disabled]="loginForm.invalid">
+        <ion-icon slot="start" name="person"></ion-icon>
+        Registrar
+      </ion-button> 
+    
+    </form>
+  </ion-card>
 </ion-content>
